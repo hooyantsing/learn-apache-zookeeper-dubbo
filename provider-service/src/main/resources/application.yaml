@@ -17,10 +17,11 @@ management:
 dubbo:
   application:
     name: ${spring.application.name}
+    qos-enable: false
   provider:
     token: false
   registry:
     address: nacos://${spring.cloud.nacos.serverAddr}
   protocol:
     name: dubbo
-    port: 20881
+    port: -1

@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: consumer-service
   # 注册服务
   cloud:
     nacos:
@@ -7,3 +9,8 @@ spring:
   config:
     import:
       - nacos:nacos-config-example.properties?refresh=true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

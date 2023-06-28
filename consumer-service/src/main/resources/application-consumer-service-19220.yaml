@@ -1,5 +1,2 @@
 server:
   port: 19220
-spring:
-  application:
-    name: consumer-service

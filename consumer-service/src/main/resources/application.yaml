@@ -1,0 +1,9 @@
+spring:
+  # 注册服务
+  cloud:
+    nacos:
+      serverAddr: 127.0.0.1:8848
+  # 配置中心
+  config:
+    import:
+      - nacos:nacos-config-example.properties?refresh=true

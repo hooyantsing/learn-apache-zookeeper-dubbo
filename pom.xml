@@ -16,6 +16,8 @@
     <description>learn-spring-cloud-alibaba</description>
     <modules>
         <module>consumer-service</module>
+        <module>provider-service</module>
+        <module>provider-service-api</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: consumer-service
+    name: provider-service
   # 注册服务
   cloud:
     nacos:

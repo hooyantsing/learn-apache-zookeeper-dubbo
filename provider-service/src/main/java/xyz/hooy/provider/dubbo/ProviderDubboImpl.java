@@ -4,7 +4,7 @@ import org.apache.dubbo.config.annotation.DubboService;
 import xyz.hooy.provider.api.dubbo.ProviderDubbo;
 import xyz.hooy.provider.api.model.Phone;
 
-@DubboService(group = "provider", version = "1.0")
+@DubboService(group = "providerDubboImpl", version = "1.0")
 public class ProviderDubboImpl implements ProviderDubbo {
 
     @Override

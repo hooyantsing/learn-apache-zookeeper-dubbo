@@ -24,6 +24,9 @@ public class SyncAsyncDubboImpl implements SyncAsyncDubbo {
         return null;
     }
 
+    /**
+     * 避免 dubbo 线程被阻塞，可以使用异步将线程切换到业务线程
+     */
     @Override
     public CompletableFuture<String> asyncInvoke(String param) {
         // 建议为supplyAsync提供自定义线程池

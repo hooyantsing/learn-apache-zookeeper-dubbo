@@ -17,11 +17,6 @@ public class ConsumerRestController {
         return "hello world";
     }
 
-    @GetMapping("/config-group")
-    public String testConfigGroup() {
-        return consumerService.configGroup();
-    }
-
     @GetMapping("/non-param")
     public String testNonParam() {
         return consumerService.nonParam();

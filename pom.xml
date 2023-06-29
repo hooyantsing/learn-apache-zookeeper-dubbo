@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>xyz.hooy</groupId>
-    <artifactId>learn-spring-cloud-alibaba</artifactId>
+    <artifactId>learn-apache-zookeeper-dubbo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>learn-spring-cloud-alibaba</name>
-    <description>learn-spring-cloud-alibaba</description>
+    <name>learn-apache-zookeeper-dubbo</name>
+    <description>learn-apache-zookeeper-dubbo</description>
     <modules>
         <module>consumer-service</module>
         <module>provider-service</module>
@@ -44,18 +44,6 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>

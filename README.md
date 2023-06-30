@@ -6,6 +6,7 @@
 [![SpringBoot](https://img.shields.io/badge/springboot-2.7.10-6cb52d.svg?style=flat-square)]()
 [![Zookeeper](https://img.shields.io/badge/zookeeper-3.8.1-46712f.svg?style=flat-square)](https://github.com/alibaba/nacos)
 [![Dubbo](https://img.shields.io/badge/dubbo-3.2.2-7862f6.svg?style=flat-square)](https://github.com/apache/dubbo)
+[![Dubbo](https://img.shields.io/badge/dubboadmin-0.5.0-7862f6.svg?style=flat-square)](https://github.com/apache/dubbo-admin)
 
 ### 架构设计
 

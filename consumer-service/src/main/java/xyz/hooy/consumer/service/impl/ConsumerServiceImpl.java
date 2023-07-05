@@ -9,7 +9,7 @@ import xyz.hooy.provider.api.model.Phone;
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
 
-    @DubboReference(group = "providerDubboImpl", version = "1.0")
+    @DubboReference
     private ProviderDubbo providerDubbo;
 
     @Override

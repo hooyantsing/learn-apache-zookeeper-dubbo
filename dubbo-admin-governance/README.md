@@ -21,3 +21,9 @@
 # macos
 ./shutdown
 ```
+
+### 登录信息
+[Dubbo-Admin](http://127.0.0.1:8080/)
+
+* 帐号：root
+* 密码：root

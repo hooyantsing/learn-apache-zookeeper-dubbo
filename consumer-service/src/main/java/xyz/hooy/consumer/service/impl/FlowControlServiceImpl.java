@@ -15,4 +15,9 @@ public class FlowControlServiceImpl implements FlowControlService {
     public String timeout() {
         return flowControlDubbo.timeout();
     }
+
+    @Override
+    public String retry() {
+        return flowControlDubbo.retry();
+    }
 }

@@ -14,7 +14,7 @@ public class FlowControlDubboImpl implements FlowControlDubbo {
     public String timeout() {
         // 模拟业务超时
         Thread.sleep(5 * 1000);
-        return "timeout-OK";
+        return "响应超时调用成功";
     }
 
     @Override
@@ -24,6 +24,6 @@ public class FlowControlDubboImpl implements FlowControlDubbo {
         if (i > 0) {
             timeout();
         }
-        return "retry-OK";
+        return "重试调用成功";
     }
 }

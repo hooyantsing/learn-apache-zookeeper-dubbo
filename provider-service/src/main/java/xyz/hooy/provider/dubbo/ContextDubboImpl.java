@@ -1,24 +1,25 @@
 package xyz.hooy.provider.dubbo;
 
 import com.alibaba.fastjson2.JSON;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.apache.dubbo.rpc.RpcContext;
 import xyz.hooy.provider.api.dubbo.ContextDubbo;
 
 import java.util.Map;
 
+@Slf4j
 @DubboService
 public class ContextDubboImpl implements ContextDubbo {
 
     @Override
     public String invoke(String param) {
-        // ServerAttachment接收客户端传递过来的参数
+        // 收 服务消费者 传递参数
         Map<String, Object> serverAttachments = RpcContext.getServerAttachment().getObjectAttachments();
-        System.out.println("ContextService serverAttachments:" + JSON.toJSONString(serverAttachments));
-        // 往客户端传递参数
-        RpcContext.getServerContext().setAttachment("serverKey", "serverValue");
-        StringBuilder s = new StringBuilder();
-        s.append("ContextService param:").append(param);
-        return s.toString();
+        log.info("收到消费者传递参数：" + JSON.toJSONString(serverAttachments));
+
+        // 发 服务消费者 传递参数
+        RpcContext.getServerContext().setAttachment("providerKey", JSON.toJSONString(serverAttachments));
+        return param;
     }
 }

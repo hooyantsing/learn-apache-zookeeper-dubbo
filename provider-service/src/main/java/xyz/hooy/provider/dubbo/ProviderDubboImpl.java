@@ -9,11 +9,11 @@ public class ProviderDubboImpl implements ProviderDubbo {
 
     @Override
     public String nonParam() {
-        return "hello dubbo";
+        return "无参调用成功";
     }
 
     @Override
     public Phone bodyModel() {
-        return new Phone("iPhone 5s", "A1528");
+        return new Phone("JavaBean 调用", "成功");
     }
 }

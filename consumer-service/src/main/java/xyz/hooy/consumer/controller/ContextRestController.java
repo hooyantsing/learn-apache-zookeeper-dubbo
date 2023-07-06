@@ -12,7 +12,7 @@ public class ContextRestController {
     private final ContextService contextService;
 
     @GetMapping("/context")
-    public void testContext(){
-        contextService.context();
+    public String testContext() {
+        return contextService.context();
     }
 }

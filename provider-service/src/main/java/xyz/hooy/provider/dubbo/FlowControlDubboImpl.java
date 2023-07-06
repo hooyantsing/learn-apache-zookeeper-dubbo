@@ -2,6 +2,7 @@ package xyz.hooy.provider.dubbo;
 
 import lombok.SneakyThrows;
 import org.apache.dubbo.config.annotation.DubboService;
+import org.springframework.beans.factory.annotation.Value;
 import xyz.hooy.provider.api.dubbo.FlowControlDubbo;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -25,5 +26,13 @@ public class FlowControlDubboImpl implements FlowControlDubbo {
             timeout();
         }
         return "重试调用成功";
+    }
+
+    @Value("${spring.application.name}")
+    private String applicationName;
+
+    @Override
+    public String conditionRoute() {
+        return applicationName;
     }
 }

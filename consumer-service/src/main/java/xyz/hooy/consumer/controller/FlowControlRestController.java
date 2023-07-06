@@ -22,4 +22,9 @@ public class FlowControlRestController {
     public String testRetry() {
         return flowControlService.retry();
     }
+
+    @GetMapping("/condition-route")
+    public String testConditionRoute() {
+        return flowControlService.conditionRoute();
+    }
 }

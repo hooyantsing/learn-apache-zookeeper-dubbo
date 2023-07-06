@@ -20,4 +20,9 @@ public class FlowControlServiceImpl implements FlowControlService {
     public String retry() {
         return flowControlDubbo.retry();
     }
+
+    @Override
+    public String conditionRoute() {
+        return flowControlDubbo.conditionRoute();
+    }
 }

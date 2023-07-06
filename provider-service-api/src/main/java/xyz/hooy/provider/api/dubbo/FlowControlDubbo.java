@@ -29,4 +29,19 @@ public interface FlowControlDubbo {
      * -------------------------------
      */
     String retry();
+
+    /**
+     * 同区域优先
+     * DubboAdmin -> 服务治理 -> 动态配置
+     * 配置：
+     * -------------------------------
+     * configVersion: v3.0
+     * enabled: true
+     * force: false
+     * key: org.apache.dubbo.samples.CommentService
+     * conditions:
+     *   - '=> region = $region'
+     * -------------------------------
+     */
+    String conditionRoute();
 }

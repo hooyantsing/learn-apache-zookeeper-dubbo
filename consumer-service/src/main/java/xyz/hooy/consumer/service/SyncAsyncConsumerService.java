@@ -1,6 +1,6 @@
 package xyz.hooy.consumer.service;
 
-public interface SyncAsyncService {
+public interface SyncAsyncConsumerService {
 
     /**
      * 消费者同步-生产者同步

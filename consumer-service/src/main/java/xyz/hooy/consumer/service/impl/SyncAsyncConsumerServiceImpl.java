@@ -3,27 +3,27 @@ package xyz.hooy.consumer.service.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
-import xyz.hooy.consumer.service.SyncAsyncService;
-import xyz.hooy.provider.api.dubbo.SyncAsyncDubbo;
+import xyz.hooy.consumer.service.SyncAsyncConsumerService;
+import xyz.hooy.provider.api.dubbo.SyncAsyncProviderDubbo;
 
 import java.util.concurrent.CompletableFuture;
 
 @Slf4j
 @Service
-public class SyncAsyncServiceImpl implements SyncAsyncService {
+public class SyncAsyncConsumerServiceImpl implements SyncAsyncConsumerService {
 
     @DubboReference(group = "syncAsyncDubboImpl", version = "1.0")
-    private SyncAsyncDubbo syncAsyncDubbo;
+    private SyncAsyncProviderDubbo syncAsyncProviderDubbo;
 
     @Override
     public void syncSync() {
-        String v = syncAsyncDubbo.syncInvoke("hooy");
+        String v = syncAsyncProviderDubbo.syncInvoke("hooy");
         log.info("syncSync: {}", v);
     }
 
     @Override
     public void syncAsync() {
-        CompletableFuture<String> future = syncAsyncDubbo.asyncInvoke("hooy");
+        CompletableFuture<String> future = syncAsyncProviderDubbo.asyncInvoke("hooy");
         future.whenComplete((v, t) -> {
             if (t == null) {
                 log.info("syncAsync: {}", v);
@@ -35,7 +35,7 @@ public class SyncAsyncServiceImpl implements SyncAsyncService {
 
     @Override
     public void asyncSync() {
-        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> syncAsyncDubbo.syncInvoke("hooy"));
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> syncAsyncProviderDubbo.syncInvoke("hooy"));
         future.whenComplete((v, t) -> {
             if (t == null) {
                 log.info("asyncSync: {}", v);
@@ -47,7 +47,7 @@ public class SyncAsyncServiceImpl implements SyncAsyncService {
 
     @Override
     public void asyncAsync() {
-        CompletableFuture<CompletableFuture<String>> future = CompletableFuture.supplyAsync(() -> syncAsyncDubbo.asyncInvoke("hooy"));
+        CompletableFuture<CompletableFuture<String>> future = CompletableFuture.supplyAsync(() -> syncAsyncProviderDubbo.asyncInvoke("hooy"));
         future.whenComplete((v, t) -> {
             if (t == null) {
                 v.whenComplete((value, throwable) -> {

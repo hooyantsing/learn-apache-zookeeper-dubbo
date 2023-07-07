@@ -1,6 +1,6 @@
 package xyz.hooy.provider.api.dubbo;
 
-public interface ContextDubbo {
+public interface ContextProviderDubbo {
 
     String invoke(String param);
 }

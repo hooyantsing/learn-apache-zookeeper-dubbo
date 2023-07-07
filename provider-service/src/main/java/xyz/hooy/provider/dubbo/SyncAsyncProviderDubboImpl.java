@@ -1,13 +1,13 @@
 package xyz.hooy.provider.dubbo;
 
 import org.apache.dubbo.config.annotation.DubboService;
-import xyz.hooy.provider.api.dubbo.SyncAsyncDubbo;
+import xyz.hooy.provider.api.dubbo.SyncAsyncProviderDubbo;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ThreadLocalRandom;
 
 @DubboService(group = "syncAsyncDubboImpl", version = "1.0")
-public class SyncAsyncDubboImpl implements SyncAsyncDubbo {
+public class SyncAsyncProviderDubboImpl implements SyncAsyncProviderDubbo {
 
     @Override
     public String syncInvoke(String param) {

@@ -3,12 +3,12 @@ package xyz.hooy.provider.dubbo;
 import lombok.SneakyThrows;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Value;
-import xyz.hooy.provider.api.dubbo.FlowControlDubbo;
+import xyz.hooy.provider.api.dubbo.FlowControlProviderDubbo;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 @DubboService
-public class FlowControlDubboImpl implements FlowControlDubbo {
+public class FlowControlProviderDubboImpl implements FlowControlProviderDubbo {
 
     @Override
     @SneakyThrows

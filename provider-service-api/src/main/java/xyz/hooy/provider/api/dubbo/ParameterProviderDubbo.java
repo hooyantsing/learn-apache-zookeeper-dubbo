@@ -1,8 +1,8 @@
-package xyz.hooy.consumer.service;
+package xyz.hooy.provider.api.dubbo;
 
 import xyz.hooy.provider.api.model.Phone;
 
-public interface ConsumerService {
+public interface ParameterProviderDubbo {
 
     String nonParam();
 

@@ -1,6 +1,6 @@
 package xyz.hooy.provider.api.dubbo;
 
-public interface FlowControlDubbo {
+public interface FlowControlProviderDubbo {
 
     /**
      * DubboAdmin -> 服务治理 -> 动态配置

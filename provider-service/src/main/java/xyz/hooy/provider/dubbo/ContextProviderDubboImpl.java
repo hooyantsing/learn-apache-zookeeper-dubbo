@@ -4,13 +4,13 @@ import com.alibaba.fastjson2.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.apache.dubbo.rpc.RpcContext;
-import xyz.hooy.provider.api.dubbo.ContextDubbo;
+import xyz.hooy.provider.api.dubbo.ContextProviderDubbo;
 
 import java.util.Map;
 
 @Slf4j
 @DubboService
-public class ContextDubboImpl implements ContextDubbo {
+public class ContextProviderDubboImpl implements ContextProviderDubbo {
 
     @Override
     public String invoke(String param) {

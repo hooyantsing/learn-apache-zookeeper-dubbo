@@ -4,27 +4,27 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import xyz.hooy.consumer.service.FlowControlService;
+import xyz.hooy.consumer.service.FlowControlConsumerService;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/flow-control")
 public class FlowControlRestController {
 
-    private final FlowControlService flowControlService;
+    private final FlowControlConsumerService flowControlConsumerService;
 
     @GetMapping("/timeout")
     public String testTimeout() {
-        return flowControlService.timeout();
+        return flowControlConsumerService.timeout();
     }
 
     @GetMapping("/retry")
     public String testRetry() {
-        return flowControlService.retry();
+        return flowControlConsumerService.retry();
     }
 
     @GetMapping("/condition-route")
     public String testConditionRoute() {
-        return flowControlService.conditionRoute();
+        return flowControlConsumerService.conditionRoute();
     }
 }

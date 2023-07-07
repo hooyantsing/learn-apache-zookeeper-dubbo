@@ -2,7 +2,7 @@ package xyz.hooy.consumer.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import xyz.hooy.consumer.service.ConsumerService;
+import xyz.hooy.consumer.service.ParameterConsumerService;
 import xyz.hooy.provider.api.model.Phone;
 
 @RestController
@@ -10,7 +10,7 @@ import xyz.hooy.provider.api.model.Phone;
 @RequestMapping("/consumer")
 public class ConsumerRestController {
 
-    private final ConsumerService consumerService;
+    private final ParameterConsumerService parameterConsumerService;
 
     @GetMapping("/hello-world")
     public String testConsumerRestController() {
@@ -19,11 +19,11 @@ public class ConsumerRestController {
 
     @GetMapping("/non-param")
     public String testNonParam() {
-        return consumerService.nonParam();
+        return parameterConsumerService.nonParam();
     }
 
     @GetMapping("/body-model")
     public Phone testBodyModel() {
-        return consumerService.bodyModel();
+        return parameterConsumerService.bodyModel();
     }
 }

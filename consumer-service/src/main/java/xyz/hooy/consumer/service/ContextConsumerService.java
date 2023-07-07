@@ -1,6 +1,6 @@
 package xyz.hooy.consumer.service;
 
-public interface ContextService {
+public interface ContextConsumerService {
 
     String context();
 }

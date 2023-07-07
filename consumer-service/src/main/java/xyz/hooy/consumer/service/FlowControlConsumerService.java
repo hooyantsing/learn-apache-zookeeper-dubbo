@@ -1,6 +1,6 @@
 package xyz.hooy.consumer.service;
 
-public interface FlowControlService {
+public interface FlowControlConsumerService {
 
     String timeout();
 

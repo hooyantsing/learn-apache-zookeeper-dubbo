@@ -1,11 +1,11 @@
 package xyz.hooy.provider.dubbo;
 
 import org.apache.dubbo.config.annotation.DubboService;
-import xyz.hooy.provider.api.dubbo.ProviderDubbo;
+import xyz.hooy.provider.api.dubbo.ParameterProviderDubbo;
 import xyz.hooy.provider.api.model.Phone;
 
 @DubboService
-public class ProviderDubboImpl implements ProviderDubbo {
+public class ParameterProviderDubboImpl implements ParameterProviderDubbo {
 
     @Override
     public String nonParam() {

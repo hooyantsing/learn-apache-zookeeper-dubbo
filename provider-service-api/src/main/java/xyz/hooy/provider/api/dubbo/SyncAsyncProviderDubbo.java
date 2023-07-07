@@ -2,7 +2,7 @@ package xyz.hooy.provider.api.dubbo;
 
 import java.util.concurrent.CompletableFuture;
 
-public interface SyncAsyncDubbo {
+public interface SyncAsyncProviderDubbo {
 
     /**
      * 同步调用方法

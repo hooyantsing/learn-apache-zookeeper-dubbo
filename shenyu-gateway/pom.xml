@@ -9,14 +9,19 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>xyz.hooy</groupId>
-    <artifactId>consumer-service</artifactId>
+    <artifactId>shenyu-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>consumer-service</name>
-    <description>consumer-service</description>
+    <name>shenyu-gateway</name>
+    <description>shenyu-gateway</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.apache.shenyu</groupId>
+            <artifactId>shenyu-spring-boot-starter-client-apache-dubbo</artifactId>
+            <version>2.5.1</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
@@ -43,10 +48,15 @@
             <artifactId>consumer-service-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>xyz.hooy</groupId>
-            <artifactId>provider-service-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

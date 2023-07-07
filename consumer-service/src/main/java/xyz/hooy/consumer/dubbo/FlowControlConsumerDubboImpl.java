@@ -1,14 +1,14 @@
-package xyz.hooy.consumer.service.impl;
+package xyz.hooy.consumer.dubbo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
-import org.springframework.stereotype.Service;
-import xyz.hooy.consumer.service.FlowControlConsumerService;
+import org.apache.dubbo.config.annotation.DubboService;
+import xyz.hooy.consumer.api.dubbo.FlowControlConsumerDubbo;
 import xyz.hooy.provider.api.dubbo.FlowControlProviderDubbo;
 
 @Slf4j
-@Service
-public class FlowControlConsumerServiceImpl implements FlowControlConsumerService {
+@DubboService
+public class FlowControlConsumerDubboImpl implements FlowControlConsumerDubbo {
 
     @DubboReference
     private FlowControlProviderDubbo flowControlProviderDubbo;

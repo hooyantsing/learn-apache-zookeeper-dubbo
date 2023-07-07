@@ -1,16 +1,16 @@
-package xyz.hooy.consumer.service.impl;
+package xyz.hooy.consumer.dubbo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
-import org.springframework.stereotype.Service;
-import xyz.hooy.consumer.service.SyncAsyncConsumerService;
+import org.apache.dubbo.config.annotation.DubboService;
+import xyz.hooy.consumer.api.dubbo.SyncAsyncConsumerDubbo;
 import xyz.hooy.provider.api.dubbo.SyncAsyncProviderDubbo;
 
 import java.util.concurrent.CompletableFuture;
 
 @Slf4j
-@Service
-public class SyncAsyncConsumerServiceImpl implements SyncAsyncConsumerService {
+@DubboService
+public class SyncAsyncConsumerDubboImpl implements SyncAsyncConsumerDubbo {
 
     @DubboReference(group = "syncAsyncDubboImpl", version = "1.0")
     private SyncAsyncProviderDubbo syncAsyncProviderDubbo;

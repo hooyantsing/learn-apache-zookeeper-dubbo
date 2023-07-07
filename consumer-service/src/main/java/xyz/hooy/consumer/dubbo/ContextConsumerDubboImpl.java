@@ -1,18 +1,18 @@
-package xyz.hooy.consumer.service.impl;
+package xyz.hooy.consumer.dubbo;
 
 import com.alibaba.fastjson2.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.apache.dubbo.rpc.RpcContext;
-import org.springframework.stereotype.Service;
-import xyz.hooy.consumer.service.ContextConsumerService;
+import xyz.hooy.consumer.api.dubbo.ContextConsumerDubbo;
 import xyz.hooy.provider.api.dubbo.ContextProviderDubbo;
 
 import java.util.Map;
 
 @Slf4j
-@Service
-public class ContextConsumerServiceImpl implements ContextConsumerService {
+@DubboService
+public class ContextConsumerDubboImpl implements ContextConsumerDubbo {
 
     @DubboReference
     private ContextProviderDubbo contextProviderDubbo;

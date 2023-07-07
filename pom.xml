@@ -15,7 +15,9 @@
     <name>learn-apache-zookeeper-dubbo</name>
     <description>learn-apache-zookeeper-dubbo</description>
     <modules>
+        <module>shenyu-gateway</module>
         <module>consumer-service</module>
+        <module>consumer-service-api</module>
         <module>provider-service</module>
         <module>provider-service-api</module>
     </modules>

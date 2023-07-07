@@ -1,24 +1,24 @@
-package xyz.hooy.consumer.service;
+package xyz.hooy.consumer.api.dubbo;
 
-public interface SyncAsyncConsumerService {
+public interface SyncAsyncConsumerDubbo {
 
     /**
      * 消费者同步-生产者同步
      */
-    public void syncSync();
+    void syncSync();
 
     /**
      * 消费者同步-生产者异步
      */
-    public void syncAsync();
+    void syncAsync();
 
     /**
      * 消费者异步-生产者同步
      */
-    public void asyncSync();
+    void asyncSync();
 
     /**
      * 消费者异步-生产者异步
      */
-    public void asyncAsync();
+    void asyncAsync();
 }

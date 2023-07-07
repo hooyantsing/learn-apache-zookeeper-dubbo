@@ -39,7 +39,7 @@
         </dependency>
         <dependency>
             <groupId>xyz.hooy</groupId>
-            <artifactId>provider-service-api</artifactId>
+            <artifactId>comment-service-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

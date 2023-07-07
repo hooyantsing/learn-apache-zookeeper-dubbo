@@ -1,10 +1,12 @@
 package xyz.hooy.consumer.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
 import xyz.hooy.consumer.service.FlowControlService;
 import xyz.hooy.provider.api.dubbo.FlowControlDubbo;
 
+@Slf4j
 @Service
 public class FlowControlServiceImpl implements FlowControlService {
 
@@ -13,16 +15,22 @@ public class FlowControlServiceImpl implements FlowControlService {
 
     @Override
     public String timeout() {
-        return flowControlDubbo.timeout();
+        String record = flowControlDubbo.timeout();
+        log.info(record);
+        return record;
     }
 
     @Override
     public String retry() {
-        return flowControlDubbo.retry();
+        String record = flowControlDubbo.retry();
+        log.info(record);
+        return record;
     }
 
     @Override
     public String conditionRoute() {
-        return flowControlDubbo.conditionRoute();
+        String record = flowControlDubbo.conditionRoute();
+        log.info(record);
+        return record;
     }
 }

@@ -1,11 +1,13 @@
 package xyz.hooy.consumer.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
 import xyz.hooy.consumer.service.ConsumerService;
 import xyz.hooy.provider.api.dubbo.ProviderDubbo;
 import xyz.hooy.provider.api.model.Phone;
 
+@Slf4j
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
 
@@ -14,11 +16,15 @@ public class ConsumerServiceImpl implements ConsumerService {
 
     @Override
     public String nonParam() {
-        return providerDubbo.nonParam();
+        String record = providerDubbo.nonParam();
+        log.info(record);
+        return record;
     }
 
     @Override
     public Phone bodyModel() {
-        return providerDubbo.bodyModel();
+        Phone record = providerDubbo.bodyModel();
+        log.info(record.toString());
+        return record;
     }
 }

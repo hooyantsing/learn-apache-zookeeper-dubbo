@@ -4,13 +4,15 @@ import xyz.hooy.comment.api.entity.Comment;
 
 import java.util.List;
 
-public interface CommentInfoDubbo {
+public interface CommentDubbo {
 
     List<Comment> allComments();
 
     Comment getCommentById(Long id);
 
     String getCommentNameById(Long id);
+
+    String getCommentContentById(Long id);
 
     Integer getIndexForComments(Comment comment);
 }

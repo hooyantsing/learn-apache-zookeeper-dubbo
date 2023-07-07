@@ -16,6 +16,8 @@
     <modules>
         <module>comment-service</module>
         <module>comment-service-api</module>
+        <module>detail-service</module>
+        <module>detail-service-api</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

@@ -1,18 +1,22 @@
 package xyz.hooy.comment.dubbo;
 
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.lang.Nullable;
-import xyz.hooy.comment.api.dubbo.CommentInfoDubbo;
+import xyz.hooy.comment.api.dubbo.CommentDubbo;
 import xyz.hooy.comment.api.entity.Comment;
 import xyz.hooy.comment.dao.CommentDao;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.ThreadLocalRandom;
 
+@Slf4j
 @DubboService
 @RequiredArgsConstructor
-public class CommentInfoDubboImpl implements CommentInfoDubbo {
+public class CommentDubboImpl implements CommentDubbo {
 
     private final CommentDao commentDao;
 
@@ -35,11 +39,34 @@ public class CommentInfoDubboImpl implements CommentInfoDubbo {
         return null;
     }
 
+    /**
+     * 模拟超时
+     */
     @Override
+    @SneakyThrows
     public String getCommentNameById(@Nullable Long id) {
+        Thread.sleep(5 * 1000);
         if (Objects.nonNull(id)) {
             Comment comment = getCommentById(id);
             return comment.getName();
+        }
+        return null;
+    }
+
+    /**
+     * 模拟重试
+     */
+    @Override
+    @SneakyThrows
+    public String getCommentContentById(Long id) {
+        int i = ThreadLocalRandom.current().nextInt(2);
+        log.info(String.valueOf(i));
+        if (i > 0) {
+            Thread.sleep(5 * 1000);
+        }
+        if (Objects.nonNull(id)) {
+            Comment comment = getCommentById(id);
+            return comment.getContent();
         }
         return null;
     }

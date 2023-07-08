@@ -1,13 +1,17 @@
 package xyz.hooy.detail.api.entity;
 
-public class Detail {
+import java.io.Serializable;
+
+public class Detail implements Serializable {
 
     private Long id;
+    private Long orderId;
     private String name;
     private String introduction;
 
-    public Detail(Long id, String name, String introduction) {
+    public Detail(Long id, Long orderId, String name, String introduction) {
         this.id = id;
+        this.orderId = orderId;
         this.name = name;
         this.introduction = introduction;
     }
@@ -18,6 +22,14 @@ public class Detail {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
     public String getName() {

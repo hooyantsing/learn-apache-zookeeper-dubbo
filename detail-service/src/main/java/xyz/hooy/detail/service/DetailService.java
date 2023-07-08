@@ -9,7 +9,6 @@ import xyz.hooy.detail.api.entity.Detail;
 import xyz.hooy.detail.api.entity.FullDetail;
 import xyz.hooy.detail.dao.DetailDao;
 
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -22,7 +21,11 @@ public class DetailService {
     private CommentDubbo commentDubbo;
 
     public Detail getDetailById(Long id) {
-        return detailDao.getDetail();
+        long i = id;
+        return detailDao.getDetails().stream()
+                .filter(detail -> i == detail.getId())
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("No such detailId: " + i));
     }
 
     public String getDetailNameById(Long id) {
@@ -35,7 +38,7 @@ public class DetailService {
 
     public FullDetail getFullDetailById(Long id) {
         Detail detail = getDetailById(id);
-        List<Comment> comments = commentDubbo.allComments();
+        List<Comment> comments = commentDubbo.getCommentsByDetailId(detail.getId());
         return new FullDetail(detail, comments);
     }
 
@@ -49,5 +52,19 @@ public class DetailService {
         Detail detail = getDetailById(id);
         List<String> commentsContent = commentDubbo.getCommentsContentByDetailId(id);
         return new FullDetail(detail, commentsContent);
+    }
+
+    public Detail getDetailByOrderId(Long orderId) {
+        long i = orderId;
+        return detailDao.getDetails().stream()
+                .filter(detail -> i == detail.getOrderId())
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("No such orderId: " + i));
+    }
+
+    public FullDetail getFullDetailByOrderId(Long orderId) {
+        Detail detail = getDetailByOrderId(orderId);
+        List<Comment> comments = commentDubbo.getCommentsByDetailId(detail.getId());
+        return new FullDetail(detail, comments);
     }
 }

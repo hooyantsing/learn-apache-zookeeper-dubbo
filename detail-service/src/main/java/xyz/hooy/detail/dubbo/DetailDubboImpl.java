@@ -32,4 +32,9 @@ public class DetailDubboImpl implements DetailDubbo {
     public FullDetail getFullDetailById(Long id) {
         return detailService.getFullDetailById(id);
     }
+
+    @Override
+    public FullDetail getFullDetailByOrderId(Long orderId) {
+        return detailService.getFullDetailByOrderId(orderId);
+    }
 }

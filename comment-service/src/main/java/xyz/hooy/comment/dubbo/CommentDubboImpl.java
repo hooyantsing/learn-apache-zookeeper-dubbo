@@ -25,6 +25,11 @@ public class CommentDubboImpl implements CommentDubbo {
     }
 
     @Override
+    public List<Comment> getCommentsByDetailId(Long detailId) {
+        return commentService.getCommentsByDetailId(detailId);
+    }
+
+    @Override
     public List<String> getCommentsNameByDetailId(Long detailId) {
         return commentService.getCommentsNameByDetailId(detailId);
     }

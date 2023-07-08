@@ -12,4 +12,6 @@ public interface DetailDubbo {
     String getDetailIntroductionById(Long id);
 
     FullDetail getFullDetailById(Long id);
+
+    FullDetail getFullDetailByOrderId(Long orderId);
 }

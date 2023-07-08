@@ -39,15 +39,15 @@ public class DetailService {
         return new FullDetail(detail, comments);
     }
 
-    public FullDetail getFullDetailWithFirstCommentNameById(Long id) {
+    public FullDetail getFullDetailWithCommentsNameById(Long id) {
         Detail detail = getDetailById(id);
-        String firstCommentName = commentDubbo.getFirstCommentNameByDetailId(id);
-        return new FullDetail(detail, Collections.singletonList(firstCommentName));
+        List<String> commentsName = commentDubbo.getCommentsNameByDetailId(id);
+        return new FullDetail(detail, commentsName);
     }
 
-    public FullDetail getFullDetailWithFirstCommentContentById(Long id) {
+    public FullDetail getFullDetailWithCommentsContentById(Long id) {
         Detail detail = getDetailById(id);
-        String firstCommentContent = commentDubbo.getFirstCommentContentByDetailId(id);
-        return new FullDetail(detail, Collections.singletonList(firstCommentContent));
+        List<String> commentsContent = commentDubbo.getCommentsContentByDetailId(id);
+        return new FullDetail(detail, commentsContent);
     }
 }

@@ -8,9 +8,11 @@ import org.springframework.stereotype.Service;
 import xyz.hooy.comment.api.entity.Comment;
 import xyz.hooy.comment.dao.CommentDao;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -36,49 +38,44 @@ public class CommentService {
         return null;
     }
 
-    public Comment getFirstCommentByDetailId(Long detailId) {
+    public List<Comment> getCommentsByDetailId(Long detailId) {
         if (Objects.nonNull(detailId)) {
             long i = detailId;
-            List<Comment> comments = allComments();
-            for (Comment comment : comments) {
-                if (i == comment.getDetailId()) {
-                    return comment;
-                }
-            }
+            return allComments().stream()
+                    .filter(comment -> i == comment.getDetailId())
+                    .collect(Collectors.toList());
         }
-        return null;
+        return Collections.emptyList();
     }
 
     /**
      * 超时
      */
     @SneakyThrows
-    public String getFirstCommentNameByDetailId(Long detailId) {
+    public List<String> getCommentsNameByDetailId(Long detailId) {
         Thread.sleep(2 * 1000);
         if (Objects.nonNull(detailId)) {
-            Comment firstComment = getFirstCommentByDetailId(detailId);
-            if (Objects.nonNull(firstComment)) {
-                return firstComment.getName();
-            }
+            return getCommentsByDetailId(detailId).stream()
+                    .map(Comment::getName)
+                    .collect(Collectors.toList());
         }
-        return null;
+        return Collections.emptyList();
     }
 
     /**
      * 重试
      */
     @SneakyThrows
-    public String getFirstCommentContentByDetailId(Long detailId) {
+    public List<String> getCommentsContentByDetailId(Long detailId) {
         int i = ThreadLocalRandom.current().nextInt(2);
         if (i > 0) {
             Thread.sleep(2 * 1000);
         }
         if (Objects.nonNull(detailId)) {
-            Comment firstComment = getFirstCommentByDetailId(detailId);
-            if (Objects.nonNull(firstComment)) {
-                return firstComment.getContent();
-            }
+            return getCommentsByDetailId(detailId).stream()
+                    .map(Comment::getContent)
+                    .collect(Collectors.toList());
         }
-        return null;
+        return Collections.emptyList();
     }
 }

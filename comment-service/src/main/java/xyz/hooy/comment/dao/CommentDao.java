@@ -14,9 +14,9 @@ public class CommentDao {
 
     private List<Comment> initComments() {
         List<Comment> comments = new ArrayList<>();
-        comments.add(new Comment(0L, 0L, "LiMing", "How are you ?", LocalDateTime.now()));
-        comments.add(new Comment(1L, 0L, "Jenny", "I am fine, and you ?", LocalDateTime.now()));
-        comments.add(new Comment(2L, 0L, "Danny", "I am fine, thank you !", LocalDateTime.now()));
+        comments.add(new Comment(1L, 1L, "LiMing", "How are you ?", LocalDateTime.now()));
+        comments.add(new Comment(2L, 1L, "Jenny", "I am fine, and you ?", LocalDateTime.now()));
+        comments.add(new Comment(3L, 2L, "Danny", "I am fine, thank you !", LocalDateTime.now()));
         return comments;
     }
 

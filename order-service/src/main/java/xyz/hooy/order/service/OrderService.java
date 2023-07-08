@@ -15,7 +15,7 @@ public class OrderService {
 
     private final OrderDao orderDao;
 
-    @DubboReference
+    @DubboReference(check = false)
     private DetailDubbo detailDubbo;
 
     public FullOrder getOrder() {

@@ -17,7 +17,7 @@ public class DetailService {
 
     private final DetailDao detailDao;
 
-    @DubboReference
+    @DubboReference(check = false)
     private CommentDubbo commentDubbo;
 
     public Detail getDetailById(Long id) {

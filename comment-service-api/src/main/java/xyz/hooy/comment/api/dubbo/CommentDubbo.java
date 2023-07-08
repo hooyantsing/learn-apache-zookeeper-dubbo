@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface CommentDubbo {
 
-    List<Comment> allComments();
-
     Comment getCommentById(Long id);
 
     List<Comment> getCommentsByDetailId(Long detailId);

@@ -2,7 +2,7 @@ server:
   port: 21110
 spring:
   application:
-    name: comment-service
+    name: detail-service
 dubbo:
   application:
     name: ${spring.application.name}

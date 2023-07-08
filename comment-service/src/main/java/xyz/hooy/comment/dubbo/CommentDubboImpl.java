@@ -15,11 +15,6 @@ public class CommentDubboImpl implements CommentDubbo {
     private final CommentService commentService;
 
     @Override
-    public List<Comment> allComments() {
-        return commentService.allComments();
-    }
-
-    @Override
     public Comment getCommentById(Long id) {
         return commentService.getCommentById(id);
     }

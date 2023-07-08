@@ -5,12 +5,14 @@ import java.time.LocalDateTime;
 public class Comment {
 
     private Long id;
+    private Long detailId;
     private String name;
     private String content;
     private LocalDateTime timestamp;
 
-    public Comment(Long id, String name, String content, LocalDateTime timestamp) {
+    public Comment(Long id,Long detailId, String name, String content, LocalDateTime timestamp) {
         this.id = id;
+        this.detailId = detailId;
         this.name = name;
         this.content = content;
         this.timestamp = timestamp;
@@ -22,6 +24,14 @@ public class Comment {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getDetailId() {
+        return detailId;
+    }
+
+    public void setDetailId(Long detailId) {
+        this.detailId = detailId;
     }
 
     public String getName() {

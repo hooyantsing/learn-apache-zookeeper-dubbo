@@ -10,9 +10,7 @@ public interface CommentDubbo {
 
     Comment getCommentById(Long id);
 
-    String getCommentNameById(Long id);
+    String getFirstCommentNameByDetailId(Long detailId);
 
-    String getCommentContentById(Long id);
-
-    Integer getIndexForComments(Comment comment);
+    String getFirstCommentContentByDetailId(Long detailId);
 }

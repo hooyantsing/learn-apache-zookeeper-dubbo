@@ -5,11 +5,11 @@ import xyz.hooy.detail.api.entity.FullDetail;
 
 public interface DetailDubbo {
 
-    Detail getDetailById(String id);
+    Detail getDetailById(Long id);
 
-    FullDetail getFullDetailById(String id);
+    String getDetailNameById(Long id);
 
-    String getDetailNameById(String id);
+    String getDetailIntroductionById(Long id);
 
-    String getDetailIntroductionById(String id);
+    FullDetail getFullDetailById(Long id);
 }

@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public class DetailDao {
 
-    private final Detail DETAIL = new Detail(1L, 1L, "iPhoneX", "Say hello to the future");
+    private final List<Detail> DETAILS = Collections.singletonList(new Detail(1L, 1L, "iPhoneX", "Say hello to the future"));
 
-    public List<Detail> getDetails() {
-        return Collections.singletonList(DETAIL);
+    public List<Detail> allDetails() {
+        return DETAILS;
     }
 }

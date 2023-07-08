@@ -22,7 +22,7 @@ public class DetailService {
 
     public Detail getDetailById(Long id) {
         long i = id;
-        return detailDao.getDetails().stream()
+        return detailDao.allDetails().stream()
                 .filter(detail -> i == detail.getId())
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("No such detailId: " + i));
@@ -56,7 +56,7 @@ public class DetailService {
 
     public Detail getDetailByOrderId(Long orderId) {
         long i = orderId;
-        return detailDao.getDetails().stream()
+        return detailDao.allDetails().stream()
                 .filter(detail -> i == detail.getOrderId())
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("No such orderId: " + i));

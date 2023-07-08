@@ -18,6 +18,8 @@
         <module>comment-service-api</module>
         <module>detail-service</module>
         <module>detail-service-api</module>
+        <module>order-service</module>
+        <module>order-service-api</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

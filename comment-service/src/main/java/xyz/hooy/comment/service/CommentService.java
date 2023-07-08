@@ -68,6 +68,7 @@ public class CommentService {
     @SneakyThrows
     public List<String> getCommentsContentByDetailId(Long detailId) {
         int i = ThreadLocalRandom.current().nextInt(2);
+        System.err.println(i);
         if (i > 0) {
             Thread.sleep(2 * 1000);
         }

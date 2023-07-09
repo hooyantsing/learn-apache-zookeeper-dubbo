@@ -37,7 +37,7 @@ public class CommentService {
      * 超时
      */
     @SneakyThrows
-    public List<String> getCommentsNameByDetailId(Long detailId) {
+    public List<String> getCommentNamesByDetailId(Long detailId) {
         Thread.sleep(2 * 1000);
         return getCommentsByDetailId(detailId).stream()
                 .map(Comment::getName)
@@ -48,7 +48,7 @@ public class CommentService {
      * 重试
      */
     @SneakyThrows
-    public List<String> getCommentsContentByDetailId(Long detailId) {
+    public List<String> getCommentContentsByDetailId(Long detailId) {
         int i = ThreadLocalRandom.current().nextInt(2);
         System.err.println(i);
         if (i > 0) {

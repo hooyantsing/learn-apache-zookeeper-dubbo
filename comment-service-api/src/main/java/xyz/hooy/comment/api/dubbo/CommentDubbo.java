@@ -10,7 +10,7 @@ public interface CommentDubbo {
 
     List<Comment> getCommentsByDetailId(Long detailId);
 
-    List<String> getCommentsNameByDetailId(Long detailId);
+    List<String> getCommentNamesByDetailId(Long detailId);
 
-    List<String> getCommentsContentByDetailId(Long detailId);
+    List<String> getCommentContentsByDetailId(Long detailId);
 }

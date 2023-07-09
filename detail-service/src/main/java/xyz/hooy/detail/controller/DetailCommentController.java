@@ -17,11 +17,11 @@ public class DetailCommentController {
 
     @GetMapping("/name/{detailId}")
     public FullDetail testTimeout(@PathVariable("detailId") Long detailId) {
-        return detailService.getFullDetailWithCommentsNameById(detailId);
+        return detailService.getFullDetailWithCommentNamesById(detailId);
     }
 
     @GetMapping("/content/{detailId}")
     public FullDetail testRetry(@PathVariable("detailId") Long detailId) {
-        return detailService.getFullDetailWithCommentsContentById(detailId);
+        return detailService.getFullDetailWithCommentContentsById(detailId);
     }
 }

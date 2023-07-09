@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import xyz.hooy.detail.entity.FullDetail;
+import xyz.hooy.detail.entity.DetailWithComments;
 import xyz.hooy.detail.service.DetailService;
 
 @RestController
@@ -16,12 +16,12 @@ public class DetailCommentController {
     private final DetailService detailService;
 
     @GetMapping("/name/{detailId}")
-    public FullDetail testTimeout(@PathVariable("detailId") Long detailId) {
-        return detailService.getFullDetailWithCommentNamesById(detailId);
+    public DetailWithComments testTimeout(@PathVariable("detailId") Long detailId) {
+        return detailService.getDetailWithCommentNamesById(detailId);
     }
 
     @GetMapping("/content/{detailId}")
-    public FullDetail testRetry(@PathVariable("detailId") Long detailId) {
-        return detailService.getFullDetailWithCommentContentsById(detailId);
+    public DetailWithComments testRetry(@PathVariable("detailId") Long detailId) {
+        return detailService.getDetailWithCommentContentsById(detailId);
     }
 }

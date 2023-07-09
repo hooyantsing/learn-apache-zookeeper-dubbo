@@ -5,7 +5,7 @@ import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
 import xyz.hooy.detail.api.dubbo.DetailDubbo;
 import xyz.hooy.detail.api.entity.Detail;
-import xyz.hooy.order.entity.FullOrder;
+import xyz.hooy.order.entity.OrderWithDetail;
 import xyz.hooy.order.api.entity.Order;
 import xyz.hooy.order.dao.OrderDao;
 
@@ -18,9 +18,9 @@ public class OrderService {
     @DubboReference(check = false)
     private DetailDubbo detailDubbo;
 
-    public FullOrder getOrder() {
+    public OrderWithDetail getOrder() {
         Order order = orderDao.getOrder();
         Detail detail = detailDubbo.getDetailByOrderId(order.getId());
-        return new FullOrder(order, detail);
+        return new OrderWithDetail(order, detail);
     }
 }

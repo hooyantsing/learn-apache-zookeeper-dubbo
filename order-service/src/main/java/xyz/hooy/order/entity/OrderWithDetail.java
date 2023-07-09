@@ -9,15 +9,15 @@ import java.io.Serializable;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class FullOrder extends Order implements Serializable {
+public class OrderWithDetail extends Order implements Serializable {
 
     private Detail detail;
 
-    public FullOrder(Long id, String title) {
+    public OrderWithDetail(Long id, String title) {
         super(id, title);
     }
 
-    public FullOrder(Order order, Detail detail) {
+    public OrderWithDetail(Order order, Detail detail) {
         this(order.getId(), order.getTitle());
         this.detail = detail;
     }

@@ -5,7 +5,7 @@ import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
 import xyz.hooy.comment.api.dubbo.CommentDubbo;
 import xyz.hooy.detail.api.entity.Detail;
-import xyz.hooy.detail.entity.FullDetail;
+import xyz.hooy.detail.entity.DetailWithComments;
 import xyz.hooy.detail.dao.DetailDao;
 
 import java.util.List;
@@ -35,16 +35,16 @@ public class DetailService {
         return getDetailById(id).getIntroduction();
     }
 
-    public FullDetail<String> getFullDetailWithCommentNamesById(Long id) {
+    public DetailWithComments<String> getDetailWithCommentNamesById(Long id) {
         Detail detail = getDetailById(id);
         List<String> commentsName = commentDubbo.getCommentNamesByDetailId(id);
-        return new FullDetail<>(detail, commentsName);
+        return new DetailWithComments<>(detail, commentsName);
     }
 
-    public FullDetail<String> getFullDetailWithCommentContentsById(Long id) {
+    public DetailWithComments<String> getDetailWithCommentContentsById(Long id) {
         Detail detail = getDetailById(id);
         List<String> commentsContent = commentDubbo.getCommentContentsByDetailId(id);
-        return new FullDetail<>(detail, commentsContent);
+        return new DetailWithComments<>(detail, commentsContent);
     }
 
     public Detail getDetailByOrderId(Long orderId) {

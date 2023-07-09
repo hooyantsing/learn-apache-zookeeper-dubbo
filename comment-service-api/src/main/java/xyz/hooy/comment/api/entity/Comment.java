@@ -11,7 +11,10 @@ public class Comment implements Serializable {
     private String content;
     private LocalDateTime timestamp;
 
-    public Comment(Long id,Long detailId, String name, String content, LocalDateTime timestamp) {
+    public Comment() {
+    }
+
+    public Comment(Long id, Long detailId, String name, String content, LocalDateTime timestamp) {
         this.id = id;
         this.detailId = detailId;
         this.name = name;

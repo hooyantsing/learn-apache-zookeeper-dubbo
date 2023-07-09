@@ -9,6 +9,9 @@ public class Detail implements Serializable {
     private String name;
     private String introduction;
 
+    public Detail() {
+    }
+
     public Detail(Long id, Long orderId, String name, String introduction) {
         this.id = id;
         this.orderId = orderId;

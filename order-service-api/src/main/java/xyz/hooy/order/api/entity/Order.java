@@ -7,6 +7,9 @@ public class Order implements Serializable {
     private Long id;
     private String title;
 
+    public Order() {
+    }
+
     public Order(Long id, String title) {
         this.id = id;
         this.title = title;

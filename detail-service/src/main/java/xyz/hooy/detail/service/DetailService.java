@@ -4,9 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
 import xyz.hooy.comment.api.dubbo.CommentDubbo;
-import xyz.hooy.comment.api.entity.Comment;
 import xyz.hooy.detail.api.entity.Detail;
-import xyz.hooy.detail.api.entity.FullDetail;
+import xyz.hooy.detail.entity.FullDetail;
 import xyz.hooy.detail.dao.DetailDao;
 
 import java.util.List;
@@ -36,22 +35,16 @@ public class DetailService {
         return getDetailById(id).getIntroduction();
     }
 
-    public FullDetail getFullDetailById(Long id) {
-        Detail detail = getDetailById(id);
-        List<Comment> comments = commentDubbo.getCommentsByDetailId(detail.getId());
-        return new FullDetail(detail, comments);
-    }
-
-    public FullDetail getFullDetailWithCommentsNameById(Long id) {
+    public FullDetail<String> getFullDetailWithCommentsNameById(Long id) {
         Detail detail = getDetailById(id);
         List<String> commentsName = commentDubbo.getCommentsNameByDetailId(id);
-        return new FullDetail(detail, commentsName);
+        return new FullDetail<>(detail, commentsName);
     }
 
-    public FullDetail getFullDetailWithCommentsContentById(Long id) {
+    public FullDetail<String> getFullDetailWithCommentsContentById(Long id) {
         Detail detail = getDetailById(id);
         List<String> commentsContent = commentDubbo.getCommentsContentByDetailId(id);
-        return new FullDetail(detail, commentsContent);
+        return new FullDetail<>(detail, commentsContent);
     }
 
     public Detail getDetailByOrderId(Long orderId) {
@@ -60,11 +53,5 @@ public class DetailService {
                 .filter(detail -> i == detail.getOrderId())
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("No such orderId: " + i));
-    }
-
-    public FullDetail getFullDetailByOrderId(Long orderId) {
-        Detail detail = getDetailByOrderId(orderId);
-        List<Comment> comments = commentDubbo.getCommentsByDetailId(detail.getId());
-        return new FullDetail(detail, comments);
     }
 }

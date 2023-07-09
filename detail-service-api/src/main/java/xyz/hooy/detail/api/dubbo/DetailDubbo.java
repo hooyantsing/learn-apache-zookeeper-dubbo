@@ -1,7 +1,6 @@
 package xyz.hooy.detail.api.dubbo;
 
 import xyz.hooy.detail.api.entity.Detail;
-import xyz.hooy.detail.api.entity.FullDetail;
 
 public interface DetailDubbo {
 
@@ -11,7 +10,5 @@ public interface DetailDubbo {
 
     String getDetailIntroductionById(Long id);
 
-    FullDetail getFullDetailById(Long id);
-
-    FullDetail getFullDetailByOrderId(Long orderId);
+    Detail getDetailByOrderId(Long orderId);
 }

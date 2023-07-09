@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
 import xyz.hooy.detail.api.dubbo.DetailDubbo;
 import xyz.hooy.detail.api.entity.Detail;
-import xyz.hooy.detail.api.entity.FullDetail;
 import xyz.hooy.detail.service.DetailService;
 
 @DubboService
@@ -29,12 +28,7 @@ public class DetailDubboImpl implements DetailDubbo {
     }
 
     @Override
-    public FullDetail getFullDetailById(Long id) {
-        return detailService.getFullDetailById(id);
-    }
-
-    @Override
-    public FullDetail getFullDetailByOrderId(Long orderId) {
-        return detailService.getFullDetailByOrderId(orderId);
+    public Detail getDetailByOrderId(Long orderId) {
+        return detailService.getDetailByOrderId(orderId);
     }
 }

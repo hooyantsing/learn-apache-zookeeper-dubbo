@@ -7,7 +7,7 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.10</version>
     </parent>
-    <groupId>xyz.hooy</groupId>
+    <groupId>xyz.hooy.lazd</groupId>
     <artifactId>learn-apache-zookeeper-dubbo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>

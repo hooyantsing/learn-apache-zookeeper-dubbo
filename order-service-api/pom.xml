@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>xyz.hooy</groupId>
+    <groupId>xyz.hooy.lazd</groupId>
     <artifactId>order-service-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>order-service-api</name>

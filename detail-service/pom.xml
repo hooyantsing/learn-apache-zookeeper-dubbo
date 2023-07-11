@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>xyz.hooy</groupId>
+        <groupId>xyz.hooy.lazd</groupId>
         <artifactId>learn-apache-zookeeper-dubbo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>xyz.hooy</groupId>
+    <groupId>xyz.hooy.lazd</groupId>
     <artifactId>detail-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>detail-service</name>
@@ -17,12 +17,12 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>xyz.hooy</groupId>
+            <groupId>xyz.hooy.lazd</groupId>
             <artifactId>detail-service-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>xyz.hooy</groupId>
+            <groupId>xyz.hooy.lazd</groupId>
             <artifactId>comment-service-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

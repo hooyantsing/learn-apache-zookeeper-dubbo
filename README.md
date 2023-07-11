@@ -10,6 +10,9 @@
 
 ### 架构设计
 
+* [dubbo-admin](http://localhost:8080)
+* [shenyu-admin](http://loaclhost:9095)
+
 ### 许可协议
 
 [暂无]()

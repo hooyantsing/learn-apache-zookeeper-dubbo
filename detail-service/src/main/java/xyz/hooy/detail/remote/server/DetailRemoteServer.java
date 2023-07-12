@@ -1,4 +1,4 @@
-package xyz.hooy.detail.remote;
+package xyz.hooy.detail.remote.server;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
@@ -8,7 +8,7 @@ import xyz.hooy.detail.service.DetailService;
 
 @DubboService
 @RequiredArgsConstructor
-public class DetailRemoteImpl implements DetailRemote {
+public class DetailRemoteServer implements DetailRemote {
 
     private final DetailService detailService;
 

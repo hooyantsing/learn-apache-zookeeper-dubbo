@@ -1,5 +1,5 @@
 server:
-  port: 21100
+  port: 10000
 spring:
   application:
     name: order-service
@@ -13,4 +13,4 @@ dubbo:
     address: zookeeper://localhost:2181?backup=localhost:2182,localhost:2183
   protocol:
     name: dubbo
-    port: 21200
+    port: 20000

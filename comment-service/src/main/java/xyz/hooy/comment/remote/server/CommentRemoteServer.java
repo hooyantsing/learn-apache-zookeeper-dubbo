@@ -1,4 +1,4 @@
-package xyz.hooy.comment.remote;
+package xyz.hooy.comment.remote.server;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @DubboService
 @RequiredArgsConstructor
-public class CommentRemoteImpl implements CommentRemote {
+public class CommentRemoteServer implements CommentRemote {
 
     private final CommentService commentService;
 

@@ -1,8 +1,8 @@
-package xyz.hooy.detail.api.dubbo;
+package xyz.hooy.detail.api.remote;
 
 import xyz.hooy.detail.api.entity.Detail;
 
-public interface DetailDubbo {
+public interface DetailRemote {
 
     Detail getDetailById(Long id);
 

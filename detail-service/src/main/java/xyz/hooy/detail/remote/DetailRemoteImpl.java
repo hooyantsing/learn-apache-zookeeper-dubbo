@@ -1,14 +1,14 @@
-package xyz.hooy.detail.dubbo;
+package xyz.hooy.detail.remote;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
-import xyz.hooy.detail.api.dubbo.DetailDubbo;
+import xyz.hooy.detail.api.remote.DetailRemote;
 import xyz.hooy.detail.api.entity.Detail;
 import xyz.hooy.detail.service.DetailService;
 
 @DubboService
 @RequiredArgsConstructor
-public class DetailDubboImpl implements DetailDubbo {
+public class DetailRemoteImpl implements DetailRemote {
 
     private final DetailService detailService;
 

@@ -1,10 +1,10 @@
-package xyz.hooy.comment.api.dubbo;
+package xyz.hooy.comment.api.remote;
 
 import xyz.hooy.comment.api.entity.Comment;
 
 import java.util.List;
 
-public interface CommentDubbo {
+public interface CommentRemote {
 
     Comment getCommentById(Long id);
 
